@@ -12,7 +12,6 @@ class App extends React.Component {
       selectedPokemon: null,
     };
   }
-  componentWillMount() {}
   componentDidMount() {
     this.setState({ pokemons: pokemonData });
   }
@@ -20,7 +19,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Pokedex</h1>
-        <Pokedex />
+        <Pokedex pokemons={this.state.pokemons} />
       </div>
     );
   }
