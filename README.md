@@ -1,3 +1,5 @@
+Component Structure: [Components Hierarchy](https://github.com/ganesh-sadanala/React-PokedoxApp/blob/master/public/pokedex-app.jpg)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

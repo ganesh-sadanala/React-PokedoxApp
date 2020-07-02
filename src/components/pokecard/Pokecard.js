@@ -1,9 +1,14 @@
 import React from "react";
 import "./pokecard.css";
 
-export const Pokecard = ({ key, id, name, sprite }) => {
+export const Pokecard = ({ key, id, name, sprite, handleClick }) => {
   return (
-    <div className="pokecard">
+    <div
+      className="pokecard"
+      onClick={() => {
+        handleClick(name);
+      }}
+    >
       {id <= 200 ? (
         <img className="pokemon-sprite" alt="pokemon" src={sprite} />
       ) : null}

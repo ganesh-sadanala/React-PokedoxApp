@@ -9,6 +9,7 @@ class App extends React.Component {
     this.state = {
       searchField: "",
       pokemons: [],
+      selectedPokemon: null,
     };
   }
   componentDidMount() {
@@ -17,6 +18,12 @@ class App extends React.Component {
 
   handlePokeSearch = (searchValue) => {
     this.setState({ searchField: searchValue });
+  };
+
+  handleClick = (name) => {
+    const { pokemons } = this.state.pokemons;
+    let selectedPokemon = pokemons.find((pokemon) => pokemon.name === name);
+    this.setState({ selectedPokemon: selectedPokemon });
   };
   render() {
     const { pokemons, searchField } = this.state;
@@ -31,6 +38,8 @@ class App extends React.Component {
         <Pokedex
           pokemons={searchedPokemons}
           handlePokeSearch={this.handlePokeSearch}
+          handleClick={this.handleClick}
+          selectedPokemon={this.state.selectedPokemon}
         />
       </div>
     );

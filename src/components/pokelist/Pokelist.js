@@ -3,7 +3,7 @@ import "./pokelist.css";
 import { Pokecard } from "../pokecard/Pokecard";
 import { Searchbox } from "../searchbox/Searchbox";
 
-export const PokeList = ({ pokemons, handlePokeSearch }) => {
+export const PokeList = ({ pokemons, handlePokeSearch, handleClick }) => {
   return (
     <div>
       <Searchbox handlePokeSearch={handlePokeSearch} />
@@ -20,6 +20,7 @@ export const PokeList = ({ pokemons, handlePokeSearch }) => {
               id={pokemon.id}
               name={pokemon.name}
               sprite={sprite}
+              handleClick={handleClick}
             />
           ) : null;
         })}
