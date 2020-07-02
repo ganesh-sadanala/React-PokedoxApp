@@ -1,17 +1,23 @@
 import React from "react";
 import "./poke-search-result.css";
 
-export const PokeSearchResult = ({ showResult, name }) => {
+export const PokeSearchResult = ({ showResult, pokemon }) => {
+  let sprite = null;
+  if (pokemon) {
+    sprite = JSON.parse(pokemon.sprites);
+    sprite = sprite.animated;
+  }
   return (
     <div className="pokecard">
       {showResult ? (
         <div>
-          <p>{name}</p>
+          <img className="pokemon-sprite" alt="pokemon" src={sprite} />
+          <p>Name: {pokemon.name}</p>
+          <p>Height: {pokemon.height}</p>
+          <p>Weight: {pokemon.weight}</p>
         </div>
       ) : (
-        <div>
-          <p>Welcome to the Pokedex</p>
-        </div>
+        <p>Welcome to the Pokedex</p>
       )}
     </div>
   );

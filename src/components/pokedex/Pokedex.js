@@ -20,7 +20,7 @@ export const Pokedex = ({
       </div>
       <div className="pokesearchresult-container">
         {selectedPokemon ? (
-          <PokeSearchResult showResult={true} name={selectedPokemon.name} />
+          <PokeSearchResult showResult={true} pokemon={selectedPokemon} />
         ) : (
           <PokeSearchResult showResult={false} />
         )}

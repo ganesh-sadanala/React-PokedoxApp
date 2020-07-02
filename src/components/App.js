@@ -21,7 +21,7 @@ class App extends React.Component {
   };
 
   handleClick = (name) => {
-    const { pokemons } = this.state.pokemons;
+    const { pokemons } = this.state;
     let selectedPokemon = pokemons.find((pokemon) => pokemon.name === name);
     this.setState({ selectedPokemon: selectedPokemon });
   };
